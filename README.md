@@ -1,4 +1,4 @@
-# LCD-Arduino
+# LCD_i2c Arduino
 
 Librería LiquidCrystal_I2C para Arduino
 Existen diferentes tipos y versiones de librerías para trabajar con el módulo Adaptador LCD a I2C, información más completa pueden encontrar en: http://playground.arduino.cc/Code/LCDi2c , nosotros usaremos la librería LiquidCrystal_I2C
