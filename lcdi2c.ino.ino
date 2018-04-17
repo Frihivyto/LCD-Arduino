@@ -1,24 +1,30 @@
-//YWROBOT
-//Compatible with the Arduino IDE 1.0
-//Library version:1.1
 #include <Wire.h> 
 #include <LiquidCrystal_I2C.h>
 
-LiquidCrystal_I2C lcd(0x3F,16,2);  // set the LCD address to 0x27 for a 16 chars and 2 line display
+//Crear el objeto lcd  dirección  0x3F y 16 columnas x 2 filas
+LiquidCrystal_I2C lcd(0x3F,16,2);  //
 
-void setup()
-{
-  lcd.init();                      // initialize the lcd 
+void setup() {
+  // Inicializar el LCD
   lcd.init();
-  // Print a message to the LCD.
+  
+  //Encender la luz de fondo.
   lcd.backlight();
-  lcd.setCursor(2,0);
-  lcd.print("text will cont...");
-  lcd.setCursor(2,1);
-  lcd.print("inue in here!!");
+
+   // Ubicamos el cursor en la primera posición(columna:0) de la primera línea(fila:0)
+   // Posición por defecto
+    lcd.setCursor(0,0);
+
+  
+  // Escribimos el Mensaje en el LCD.
+  lcd.print("Hola Mundo");
 }
 
-
-void loop()
-{
+void loop() {
+   // Ubicamos el cursor en la primera posición(columna:0) de la segunda línea(fila:1)
+  lcd.setCursor(0, 0);
+   // Escribimos el número de segundos trascurridos
+  lcd.print(millis()/1000);
+  lcd.print(" Segundos");
+  delay(100);
 }
